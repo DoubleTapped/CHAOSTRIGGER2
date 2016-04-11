@@ -1,1 +1,3 @@
 Content\SpriteFont1.xnb
+Content\AnimationFont.xnb
+Content\FadeTest.xnb

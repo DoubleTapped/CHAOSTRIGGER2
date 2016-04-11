@@ -14,6 +14,9 @@ namespace CHAOSTRIGGER2
     {
         KeyboardState keyState;
         SpriteFont font;
+        List<FadeAnimation> fade;
+        List<Texture2D> images;
+        int imageNumber;
 
         public SplashScreen(SpriteBatch spriteBatchLoad)
         {
@@ -25,6 +28,28 @@ namespace CHAOSTRIGGER2
             if (font == null)
             {
                 font = content.Load<SpriteFont>("SpriteFont1");
+            }
+            fade = new List<FadeAnimation>();
+            images = new List<Texture2D>();
+            imageNumber = 0;
+            for (int i = 0; i < attributes.Count; i++)
+            {
+                for (int j = 0; j < attributes[i].Count; j++)
+                {
+                    switch (attributes[i][j])
+                    {
+                        case "Image":
+                            images.Add(content.Load<Texture2D>(contents[i][j]));
+                            fade.Add(new FadeAnimation());
+                            break;
+                    }
+                }
+            }
+            for (int i = 0; i < fade.Count; i++)
+            {
+                fade[i].LoadContent(content, images[i], "", Vector2.Zero);
+                fade[i].Scale = 3.08f;
+                fade[i].IsActive = true;
             }
         }
         public override void UnloadContent()
@@ -39,7 +64,7 @@ namespace CHAOSTRIGGER2
                 ScreenManager.Instance.AddScreen(new TitleScreen(spriteBatch));
                 Draw();
             }
-            ScreenManager.Instance.Update(gameTime);
+            base.Update(gameTime);
         }
         public override void Draw()
         {

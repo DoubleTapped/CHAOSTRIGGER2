@@ -10,6 +10,24 @@
       <Output>C:\Users\cpohl\documents\visual studio 2013\Projects\CHAOSTRIGGER2\CHAOSTRIGGER2\CHAOSTRIGGER2\bin\x86\Debug\Content\SpriteFont1.xnb</Output>
       <Time>2016-03-23T09:06:23.9148196-04:00</Time>
     </Item>
+    <Item>
+      <Source>AnimationFont.spritefont</Source>
+      <Name>AnimationFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\cpohl\documents\visual studio 2013\Projects\CHAOSTRIGGER2\CHAOSTRIGGER2\CHAOSTRIGGER2\bin\x86\Debug\Content\AnimationFont.xnb</Output>
+      <Time>2016-03-28T09:02:41.4069187-04:00</Time>
+    </Item>
+    <Item>
+      <Source>FadeTest.png</Source>
+      <Name>FadeTest</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\cpohl\documents\visual studio 2013\Projects\CHAOSTRIGGER2\CHAOSTRIGGER2\CHAOSTRIGGER2\bin\x86\Debug\Content\FadeTest.xnb</Output>
+      <Time>2016-03-30T10:19:08.3560468-04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{7D23A846-A3BC-412D-816E-370A07225FB0}</ContentProjectGUID>

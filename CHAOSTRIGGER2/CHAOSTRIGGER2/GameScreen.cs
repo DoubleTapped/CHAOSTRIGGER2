@@ -14,6 +14,7 @@ namespace CHAOSTRIGGER2
     {
         protected ContentManager content;
         public SpriteBatch spriteBatch;
+        protected List<List<string>> attributes, contents;
       
         public virtual void Initialize() 
         {

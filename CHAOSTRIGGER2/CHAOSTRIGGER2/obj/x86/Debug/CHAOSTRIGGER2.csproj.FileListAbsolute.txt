@@ -1,7 +1,8 @@
 C:\Users\cpohl\documents\visual studio 2013\Projects\CHAOSTRIGGER2\CHAOSTRIGGER2\CHAOSTRIGGER2\bin\x86\Debug\CHAOSTRIGGER2.exe
 C:\Users\cpohl\documents\visual studio 2013\Projects\CHAOSTRIGGER2\CHAOSTRIGGER2\CHAOSTRIGGER2\bin\x86\Debug\CHAOSTRIGGER2.pdb
-C:\Users\cpohl\documents\visual studio 2013\Projects\CHAOSTRIGGER2\CHAOSTRIGGER2\CHAOSTRIGGER2\obj\x86\Debug\CHAOSTRIGGER2.csprojResolveAssemblyReference.cache
 C:\Users\cpohl\documents\visual studio 2013\Projects\CHAOSTRIGGER2\CHAOSTRIGGER2\CHAOSTRIGGER2\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\cpohl\documents\visual studio 2013\Projects\CHAOSTRIGGER2\CHAOSTRIGGER2\CHAOSTRIGGER2\obj\x86\Debug\CHAOSTRIGGER2.exe
 C:\Users\cpohl\documents\visual studio 2013\Projects\CHAOSTRIGGER2\CHAOSTRIGGER2\CHAOSTRIGGER2\obj\x86\Debug\CHAOSTRIGGER2.pdb
 C:\Users\cpohl\documents\visual studio 2013\Projects\CHAOSTRIGGER2\CHAOSTRIGGER2\CHAOSTRIGGER2\bin\x86\Debug\Content\SpriteFont1.xnb
+C:\Users\cpohl\documents\visual studio 2013\Projects\CHAOSTRIGGER2\CHAOSTRIGGER2\CHAOSTRIGGER2\bin\x86\Debug\Content\AnimationFont.xnb
+C:\Users\cpohl\documents\visual studio 2013\Projects\CHAOSTRIGGER2\CHAOSTRIGGER2\CHAOSTRIGGER2\bin\x86\Debug\Content\FadeTest.xnb
