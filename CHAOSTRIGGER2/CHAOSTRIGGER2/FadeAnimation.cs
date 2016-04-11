@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
@@ -24,7 +25,6 @@ namespace CHAOSTRIGGER2
             get { return timer; }
             set { defaultTime = value; timer = defaultTime; }
         }
-
         public float FadeSpeed
         {
             get { return fadeSpeed; }
@@ -33,7 +33,10 @@ namespace CHAOSTRIGGER2
 
         public override float Alpha
         {
-            get{ return alpha;}
+            get
+            {
+                return alpha;
+            }
             set
             {
                 alpha = value;
@@ -48,6 +51,11 @@ namespace CHAOSTRIGGER2
             }
         }
 
+        public float ActivateValue
+        {
+            get { return activateValue; }
+            set { activateValue = value; }
+        }
         public override void LoadContent(ContentManager Content, Texture2D image, string text, Vector2 position)
         {
             base.LoadContent(Content, image, text, position);
@@ -59,6 +67,7 @@ namespace CHAOSTRIGGER2
             stopUpdating = false;
             defaultAlpha = alpha;
         }
+
         public override void Update(GameTime gameTime)
         {
             if (isActive)
@@ -93,10 +102,11 @@ namespace CHAOSTRIGGER2
                         stopUpdating = false;
                     }
                 }
+
             }
             else
             {
-               alpha = defaultAlpha;
+                alpha = defaultAlpha;
             }
         }
     }

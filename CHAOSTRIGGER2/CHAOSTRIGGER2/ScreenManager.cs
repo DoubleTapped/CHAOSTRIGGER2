@@ -2,61 +2,37 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 
 namespace CHAOSTRIGGER2
 {
-    public class ScreenManager : GameScreen
+    public class ScreenManager 
     {
-        public ScreenManager()
-        {
-            
-        }
         #region Variables
-        /// <summary>
-        /// Creating custom content manager
-        /// </summary>
         ContentManager content;
 
-        GameScreen currentScreen = new GameScreen();
+        GameScreen currentScreen;
 
         GameScreen newScreen;
 
-        /// <summary>
-        /// ScreenManager instance
-        /// </summary>
-        
         private static ScreenManager instance;
- 
-        /// <summary>
-        /// Screen stack
-        /// </summary>
-        
+
         Stack<GameScreen> screenStack = new Stack<GameScreen>();
 
-        /// <summary>
-        /// Screens width and height
-        /// </summary>
-
         Vector2 dimensions;
-
-        /// <summary>
-        /// Lets us know if we should transition or not
-        /// </summary>
 
         bool transition;
 
         FadeAnimation fade = new FadeAnimation();
-        Texture2D fadeTexture;
 
+        Texture2D fadeTexture;
         #endregion
 
         #region Properties
-
         public static ScreenManager Instance
         {
             get
@@ -64,7 +40,7 @@ namespace CHAOSTRIGGER2
                 if (instance == null)
                 {
                     instance = new ScreenManager();
-                }
+                } 
                 return instance;
             }
         }
@@ -73,10 +49,12 @@ namespace CHAOSTRIGGER2
             get { return dimensions; }
             set { dimensions = value; }
         }
-
         #endregion
 
         #region Main Methods
+        /// <summary>
+        /// Add Screen: Lets you load and unload your screen.
+        /// </summary>
         public void AddScreen(GameScreen screen)
         {
             transition = true;
@@ -85,18 +63,18 @@ namespace CHAOSTRIGGER2
             fade.Alpha = 0.0f;
             fade.ActivateValue = 1.0f;
         }
-
         public void Initialize()
         {
-            currentScreen = new SplashScreen(spriteBatch);
+            currentScreen = new SplashScreen();
             fade = new FadeAnimation();
+
+
         }
         public void LoadContent(ContentManager Content)
         {
             content = new ContentManager(Content.ServiceProvider, "Content");
             currentScreen.LoadContent(Content);
-            
-            fadeTexture = content.Load<Texture2D>("FadeTest");
+            fadeTexture = content.Load<Texture2D>("fade");
             fade.LoadContent(content, fadeTexture, "", Vector2.Zero);
             fade.Scale = dimensions.X;
         }
@@ -106,24 +84,23 @@ namespace CHAOSTRIGGER2
             {
                 currentScreen.Update(gameTime);
             }
+
             else
             {
                 Transition(gameTime);
-            }
+            }   
         }
         public void Draw(SpriteBatch spriteBatch)
         {
             currentScreen.Draw();
             if (transition)
             {
-                fade.Draw();
+                fade.Draw(spriteBatch);
             }
         }
 
         #endregion
-
         #region Private Methods
-
         private void Transition(GameTime gameTime)
         {
             fade.Update(gameTime);
@@ -134,7 +111,7 @@ namespace CHAOSTRIGGER2
                 currentScreen = newScreen;
                 currentScreen.LoadContent(content);
             }
-            else if(fade.Alpha == 0.0f)
+            else if (fade.Alpha == 0.0f)
             {
                 transition = false;
                 fade.IsActive = false;
@@ -142,5 +119,6 @@ namespace CHAOSTRIGGER2
         }
 
         #endregion
+
     }
 }

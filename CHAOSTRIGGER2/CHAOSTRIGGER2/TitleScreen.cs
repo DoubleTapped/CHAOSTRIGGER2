@@ -35,7 +35,7 @@ namespace CHAOSTRIGGER2
             keyState = Keyboard.GetState();
             if (keyState.IsKeyDown(Keys.Enter))
             {
-                ScreenManager.Instance.AddScreen(new SplashScreen(spriteBatch));
+                ScreenManager.Instance.AddScreen(new SplashScreen());
             }
             ScreenManager.Instance.Update(gameTime);
         }

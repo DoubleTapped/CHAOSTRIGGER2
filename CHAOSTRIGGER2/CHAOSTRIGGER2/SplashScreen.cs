@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
@@ -16,18 +18,15 @@ namespace CHAOSTRIGGER2
         SpriteFont font;
         List<FadeAnimation> fade;
         List<Texture2D> images;
+
         int imageNumber;
 
-        public SplashScreen(SpriteBatch spriteBatchLoad)
-        {
-            spriteBatch = spriteBatchLoad;
-        }
         public override void LoadContent(ContentManager Content)
         {
             base.LoadContent(Content);
             if (font == null)
             {
-                font = content.Load<SpriteFont>("SpriteFont1");
+                font = Content.Load<SpriteFont>("SpriteFont1");
             }
             fade = new List<FadeAnimation>();
             images = new List<Texture2D>();
@@ -47,7 +46,7 @@ namespace CHAOSTRIGGER2
             }
             for (int i = 0; i < fade.Count; i++)
             {
-                fade[i].LoadContent(content, images[i], "", Vector2.Zero);
+                fade[i].LoadContent(Content, images[i], "", Vector2.Zero);
                 fade[i].Scale = 3.08f;
                 fade[i].IsActive = true;
             }
@@ -56,19 +55,21 @@ namespace CHAOSTRIGGER2
         {
             base.UnloadContent();
         }
-        public override void Update(GameTime gameTime)
+        public override void Update(GameTime gametime)
         {
             keyState = Keyboard.GetState();
-            if (keyState.IsKeyDown(Keys.Z))
+            if (keyState.IsKeyDown(Keys.Enter))
             {
                 ScreenManager.Instance.AddScreen(new TitleScreen(spriteBatch));
-                Draw();
             }
-            base.Update(gameTime);
+                
+            base.Update(gametime);
         }
         public override void Draw()
         {
-            spriteBatch.DrawString(font, "SplashScreen", new Vector2(100, 100), Color.Black);
+            //fade[imageNumber].Draw();
         }
     }
 }
+
+

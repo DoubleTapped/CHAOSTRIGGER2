@@ -50,8 +50,9 @@ namespace CHAOSTRIGGER2
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-            this.Exit();
-
+            {
+                this.Exit();
+            }
             ScreenManager.Instance.Update(gameTime);
             base.Update(gameTime);
         }

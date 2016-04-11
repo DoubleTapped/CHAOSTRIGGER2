@@ -6,3 +6,4 @@ C:\Users\cpohl\documents\visual studio 2013\Projects\CHAOSTRIGGER2\CHAOSTRIGGER2
 C:\Users\cpohl\documents\visual studio 2013\Projects\CHAOSTRIGGER2\CHAOSTRIGGER2\CHAOSTRIGGER2\bin\x86\Debug\Content\SpriteFont1.xnb
 C:\Users\cpohl\documents\visual studio 2013\Projects\CHAOSTRIGGER2\CHAOSTRIGGER2\CHAOSTRIGGER2\bin\x86\Debug\Content\AnimationFont.xnb
 C:\Users\cpohl\documents\visual studio 2013\Projects\CHAOSTRIGGER2\CHAOSTRIGGER2\CHAOSTRIGGER2\bin\x86\Debug\Content\FadeTest.xnb
+C:\Users\cpohl\documents\visual studio 2013\Projects\CHAOSTRIGGER2\CHAOSTRIGGER2\CHAOSTRIGGER2\obj\x86\Debug\CHAOSTRIGGER2.csprojResolveAssemblyReference.cache
