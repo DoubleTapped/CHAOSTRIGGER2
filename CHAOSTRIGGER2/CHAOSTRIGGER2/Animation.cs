@@ -11,9 +11,6 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CHAOSTRIGGER2
 {
-
-
-
     public class Animation
     {
         protected Texture2D image;
@@ -32,6 +29,7 @@ namespace CHAOSTRIGGER2
             get { return alpha; }
             set { alpha = value; }
         }
+
         public bool IsActive
         {
             set { isActive = value; }
@@ -63,6 +61,7 @@ namespace CHAOSTRIGGER2
             scale = alpha = 1.0f;
             isActive = false;
         }
+
         public virtual void UnloadContent()
         {
             content.Unload();
@@ -71,6 +70,7 @@ namespace CHAOSTRIGGER2
             sourceRect = Rectangle.Empty;
             image = null;
         }
+
         public virtual void Update(GameTime gameTime)
         {
 
@@ -88,7 +88,6 @@ namespace CHAOSTRIGGER2
                 origin = new Vector2(font.MeasureString(text).X / 2, font.MeasureString(text).Y / 2);
                 spriteBatch.DrawString(font, text, position + origin, color * alpha, rotation, origin, scale, SpriteEffects.None, 0.0f);
             }
-
         }
     }
 }

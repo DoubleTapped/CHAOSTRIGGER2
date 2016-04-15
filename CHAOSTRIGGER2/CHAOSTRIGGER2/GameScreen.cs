@@ -19,9 +19,6 @@ namespace CHAOSTRIGGER2
         public virtual void Initialize() 
         {
 
-
-
-
         }
         public virtual void LoadContent(ContentManager Content)
         {
