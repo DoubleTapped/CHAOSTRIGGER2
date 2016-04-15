@@ -20,6 +20,8 @@ namespace CHAOSTRIGGER2
         {
 
 
+
+
         }
         public virtual void LoadContent(ContentManager Content)
         {
