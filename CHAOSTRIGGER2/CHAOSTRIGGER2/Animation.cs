@@ -11,6 +11,9 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CHAOSTRIGGER2
 {
+
+
+
     public class Animation
     {
         protected Texture2D image;
