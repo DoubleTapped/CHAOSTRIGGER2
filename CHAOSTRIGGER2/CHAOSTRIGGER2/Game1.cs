@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
-namespace CHAOSTRIGGER2
+namespace CHAOSTRIGGER2 //Cameron Pohl, Brendon Hanson, Colin Holmes
 {
 
     public class Game1 : Microsoft.Xna.Framework.Game

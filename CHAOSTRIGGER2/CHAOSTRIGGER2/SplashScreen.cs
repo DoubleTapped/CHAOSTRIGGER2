@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Audio;
 
 namespace CHAOSTRIGGER2
 {
@@ -18,7 +18,8 @@ namespace CHAOSTRIGGER2
         SpriteFont font;
         List<FadeAnimation> fade;
         List<Texture2D> images;
-
+        List<SoundEffect> sounds;
+        FileManager fileManager;
         int imageNumber;
 
         public override void LoadContent(ContentManager Content)
@@ -28,8 +29,11 @@ namespace CHAOSTRIGGER2
             {
                 font = Content.Load<SpriteFont>("SpriteFont1");
             }
+            fileManager = new FileManager();
             fade = new List<FadeAnimation>();
             images = new List<Texture2D>();
+            sounds = new List<SoundEffect>();
+            fileManager.LoadContent("Load/Splash.cme", attributes, contents);
             imageNumber = 0;
             for (int i = 0; i < attributes.Count; i++)
             {
@@ -41,33 +45,48 @@ namespace CHAOSTRIGGER2
                             images.Add(content.Load<Texture2D>(contents[i][j]));
                             fade.Add(new FadeAnimation());
                             break;
+                        case "Sound":
+                            sounds.Add(content.Load<SoundEffect>(contents[i][j]));
+                            break;
                     }
                 }
             }
             for (int i = 0; i < fade.Count; i++)
             {
                 fade[i].LoadContent(Content, images[i], "", Vector2.Zero);
-                fade[i].Scale = 3.08f;
+                fade[i].Scale = 1.08f;
                 fade[i].IsActive = true;
             }
         }
         public override void UnloadContent()
         {
             base.UnloadContent();
+            fileManager = null;
         }
-        public override void Update(GameTime gametime)
+        public override void Update(GameTime gameTime)
         {
             keyState = Keyboard.GetState();
             if (keyState.IsKeyDown(Keys.Enter))
             {
                 ScreenManager.Instance.AddScreen(new TitleScreen(spriteBatch));
             }
-                
-            base.Update(gametime);
+            for (int i = 0; i < fade.Count; i++)
+            {
+                if(imageNumber == i)
+                {
+                    fade[i].IsActive = true;
+                }
+                else
+                {
+                    fade[i].IsActive = false;
+                }
+                fade[i].Update(gameTime);
+            }
+                base.Update(gameTime);
         }
         public override void Draw()
         {
-            //fade[imageNumber].Draw();
+            fade[imageNumber].Draw(spriteBatch);
         }
     }
 }

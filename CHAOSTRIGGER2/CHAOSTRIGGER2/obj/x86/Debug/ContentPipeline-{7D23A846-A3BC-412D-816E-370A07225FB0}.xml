@@ -28,7 +28,16 @@
       <Output>C:\Users\cpohl\documents\visual studio 2013\Projects\CHAOSTRIGGER2\CHAOSTRIGGER2\CHAOSTRIGGER2\bin\x86\Debug\Content\FadeTest.xnb</Output>
       <Time>2016-03-30T10:19:08.3560468-04:00</Time>
     </Item>
-    <BuildSuccessful>true</BuildSuccessful>
+    <Item>
+      <Source>SplashScreen\Title.png</Source>
+      <Name>SplashScreen\Title</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\cpohl\documents\visual studio 2013\Projects\CHAOSTRIGGER2\CHAOSTRIGGER2\CHAOSTRIGGER2\bin\x86\Debug\Content\SplashScreen\Title.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
+    </Item>
+    <BuildSuccessful>false</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{7D23A846-A3BC-412D-816E-370A07225FB0}</ContentProjectGUID>
       <TargetPlatform>Windows</TargetPlatform>
