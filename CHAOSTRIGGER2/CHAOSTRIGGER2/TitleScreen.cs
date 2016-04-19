@@ -42,7 +42,7 @@ namespace CHAOSTRIGGER2
         }
         public override void Draw()
         {
-            spriteBatch.DrawString(font, "TitleScreen", new Vector2(100, 100), Color.Black);
+            spriteBatch.DrawString(font, "TitleScreen", new Vector2(100, 100), Color.CornflowerBlue);
         }
     }
 }
