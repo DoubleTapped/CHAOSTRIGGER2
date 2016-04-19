@@ -35,9 +35,9 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\cpohl\documents\visual studio 2013\Projects\CHAOSTRIGGER2\CHAOSTRIGGER2\CHAOSTRIGGER2\bin\x86\Debug\Content\SplashScreen\Title.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
+      <Time>2016-04-18T08:59:12.1539657-04:00</Time>
     </Item>
-    <BuildSuccessful>false</BuildSuccessful>
+    <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{7D23A846-A3BC-412D-816E-370A07225FB0}</ContentProjectGUID>
       <TargetPlatform>Windows</TargetPlatform>

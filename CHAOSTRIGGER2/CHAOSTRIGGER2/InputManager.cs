@@ -11,7 +11,7 @@ namespace CHAOSTRIGGER2
         KeyboardState prevKeyState, keyState;
         public KeyboardState PrevKeyState
         {
-            get { }
+            get { return prevKeyState; }
         }
     }
 }
