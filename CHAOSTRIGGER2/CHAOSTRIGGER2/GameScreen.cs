@@ -16,6 +16,7 @@ namespace CHAOSTRIGGER2
         protected ContentManager content;
         public SpriteBatch spriteBatch;
         protected List<List<string>> attributes, contents;
+        protected InputManager inputManager;
       
         public virtual void Initialize() 
         {
@@ -26,6 +27,7 @@ namespace CHAOSTRIGGER2
             content = new ContentManager(Content.ServiceProvider, "Content");
             attributes = new List<List<string>>();
             contents = new List<List<string>>();
+            inputManager = new InputManager();
         }
         public virtual void UnloadContent()
         {
