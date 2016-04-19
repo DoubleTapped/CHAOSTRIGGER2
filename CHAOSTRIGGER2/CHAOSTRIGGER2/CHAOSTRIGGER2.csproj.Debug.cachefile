@@ -1,3 +1,5 @@
 Content\SpriteFont1.xnb
 Content\AnimationFont.xnb
 Content\FadeTest.xnb
+Content\SplashScreen\Title.xnb
+Load\Splash.ct

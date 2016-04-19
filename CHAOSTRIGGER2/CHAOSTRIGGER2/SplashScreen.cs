@@ -72,17 +72,9 @@ namespace CHAOSTRIGGER2
             }
             for (int i = 0; i < fade.Count; i++)
             {
-                if(imageNumber == i)
-                {
-                    fade[i].IsActive = true;
-                }
-                else
-                {
-                    fade[i].IsActive = false;
-                }
-                fade[i].Update(gameTime);
-            }
+                fade[imageNumber].Update(gameTime);
                 base.Update(gameTime);
+            }
         }
         public override void Draw()
         {

@@ -13,9 +13,6 @@ namespace CHAOSTRIGGER2
 
         LoadType type;
 
-        List<List<string>> attributes = new List<List<string>>();
-        List<List<string>> contents = new List<List<string>>();
-
         List<string> tempAttributes;
         List<string> tempContents;
 
@@ -23,7 +20,7 @@ namespace CHAOSTRIGGER2
 
         public void LoadContent(string filename, List<List<string>> attributes, List<List<string>> contents)
         {
-            using (StreamReader reader = new StreamReader(filename))
+            using (StreamReader reader = new StreamReader("Title.png"))
             {
                 while (!reader.EndOfStream)
                 {
@@ -32,14 +29,14 @@ namespace CHAOSTRIGGER2
                     if (line.Contains("Load="))
                     {
                         tempAttributes = new List<string>();
-                        line.Remove(0, line.IndexOf("=") + 1);
+                        line = line.Remove(0, line.IndexOf("=") + 1);
                         type = LoadType.Attributes;
                     }
                     else
                     {
-                        tempContents = new List<string>();
                         type = LoadType.Contents;
                     }
+                    tempContents = new List<string>();
                     string[] lineArray = line.Split(']');
                     foreach (string li in lineArray)
                     {

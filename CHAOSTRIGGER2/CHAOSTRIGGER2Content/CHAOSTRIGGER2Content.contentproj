@@ -60,12 +60,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PlayerAnimations\PlayerIdle.gif">
-      <Name>PlayerIdle</Name>
-    </Compile>
-    <Compile Include="PlayerAnimations\PlayerRun.gif">
-      <Name>PlayerRun</Name>
-    </Compile>
+    <Folder Include="PlayerAnimations\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 
