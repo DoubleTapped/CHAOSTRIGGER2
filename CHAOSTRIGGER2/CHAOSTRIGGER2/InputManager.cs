@@ -32,5 +32,9 @@ namespace CHAOSTRIGGER2
                 return true;
             return false;
         }
+        public bool Keypressed(params Keys[] key)
+        {
+
+        }
     }
 }
