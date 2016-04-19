@@ -79,6 +79,7 @@ namespace CHAOSTRIGGER2
         public override void Draw()
         {
             fade[imageNumber].Draw(spriteBatch);
+            //sdfg
         }
     }
 }
