@@ -33,7 +33,7 @@ namespace CHAOSTRIGGER2
             fade = new List<FadeAnimation>();
             images = new List<Texture2D>();
             sounds = new List<SoundEffect>();
-            fileManager.LoadContent("Load/Splash.cme", attributes, contents);
+            fileManager.LoadContent("Load/Splash.ct", attributes, contents);
             imageNumber = 0;
             for (int i = 0; i < attributes.Count; i++)
             {
@@ -80,6 +80,7 @@ namespace CHAOSTRIGGER2
         public override void Draw()
         {
             fade[imageNumber].Draw(spriteBatch);
+            //sdfg
         }
     }
 }

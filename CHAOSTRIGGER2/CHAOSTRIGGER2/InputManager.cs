@@ -12,6 +12,25 @@ namespace CHAOSTRIGGER2
         public KeyboardState PrevKeyState
         {
             get { return prevKeyState; }
+            set { prevKeyState = value; }
+        }
+        public KeyboardState KeyState
+        {
+            get { return keyState; }
+            set { keyState = value; }
+        }
+
+        public void Update()
+        {
+            prevKeyState = keyState;
+            keyState = Keyboard.GetState();
+        }
+
+        public bool KeyPressed(Keys key)
+        {
+            if(keyState.IsKeyDown(key) && prevKeyState.IsKeyUp(key))
+                return true;
+            return false;
         }
     }
 }
