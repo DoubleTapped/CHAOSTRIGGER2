@@ -82,6 +82,7 @@
     <Compile Include="Game1.cs" />
     <Compile Include="ScreenManager.cs" />
     <Compile Include="SplashScreen.cs" />
+    <Compile Include="SpriteSheetAnimation.cs" />
     <Compile Include="TitleScreen.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -89,6 +90,10 @@
     <Content Include="GameThumbnail.png">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>
     </Content>
+    <Content Include="Sprites\PlayerIdle.png" />
+    <Content Include="Sprites\PlayerJump.png" />
+    <Content Include="Sprites\PlayerRun.png" />
+    <Content Include="Sprites\PlayerShoot.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CHAOSTRIGGER2Content\CHAOSTRIGGER2Content.contentproj">
