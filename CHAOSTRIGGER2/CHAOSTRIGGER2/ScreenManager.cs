@@ -78,7 +78,7 @@ namespace CHAOSTRIGGER2
                 fade.Alpha = 1.0f - alpha;
             else
                 fade.Alpha = alpha;
-            fade.Increase = true;
+            fade.increase = true;
             this.inputManager = inputManager;
         }
 
