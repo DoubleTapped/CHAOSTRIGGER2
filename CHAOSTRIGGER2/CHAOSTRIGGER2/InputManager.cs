@@ -68,7 +68,7 @@ namespace CHAOSTRIGGER2
         {
             foreach (Keys key in keys)
             {
-                if (keyState.IsKeyDown(keys))
+                if (keyState.IsKeyDown(key))
                     return true;
             }
             return false;
