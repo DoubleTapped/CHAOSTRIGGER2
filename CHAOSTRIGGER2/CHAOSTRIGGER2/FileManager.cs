@@ -20,7 +20,7 @@ namespace CHAOSTRIGGER2
 
         public void LoadContent(string filename, List<List<string>> attributes, List<List<string>> contents)
         {
-            using (StreamReader reader = new StreamReader("Title.png"))
+            using (StreamReader reader = new StreamReader("Load/Splash.ct"))
             {
                 while (!reader.EndOfStream)
                 {
