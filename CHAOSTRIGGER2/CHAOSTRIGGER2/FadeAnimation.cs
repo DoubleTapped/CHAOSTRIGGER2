@@ -13,7 +13,7 @@ namespace CHAOSTRIGGER2
 {
     public class FadeAnimation : Animation
     {
-        bool increase;
+        public bool increase;
         float fadeSpeed;
         TimeSpan defaultTime, timer;
         bool startTimer;

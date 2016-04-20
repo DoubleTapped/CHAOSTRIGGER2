@@ -81,7 +81,7 @@ namespace CHAOSTRIGGER2
                 if(imageNumber >= fade.Count -1 || inputManager.KeyPressed(Keys.Z))
                 {
                     if (fade[imageNumber].Alpha == 0.0f)
-                        ScreenManager.Instance.AddScreen(new TitleScreen(spriteBatch), fade[imageNumber].Alpha);
+                        ScreenManager.Instance.AddScreen(new TitleScreen(spriteBatch),inputManager, fade[imageNumber].Alpha);
                     else
                         ScreenManager.Instance.AddScreen(new TitleScreen(spriteBatch), inputManager);
                 }
