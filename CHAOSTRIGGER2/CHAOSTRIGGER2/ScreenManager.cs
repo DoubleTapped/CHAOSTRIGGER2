@@ -31,6 +31,8 @@ namespace CHAOSTRIGGER2
         FadeAnimation fade = new FadeAnimation();
 
         Texture2D fadeTexture;
+
+        InputManager inputManager;
         #endregion
 
         #region Properties
@@ -56,16 +58,17 @@ namespace CHAOSTRIGGER2
         /// <summary>
         /// Add Screen: Lets you load and unload your screen.
         /// </summary>
-        public void AddScreen(GameScreen screen)
+        public void AddScreen(GameScreen screen, InputManager inputManager)
         {
             transition = true;
             newScreen = screen;
             fade.IsActive = true;
             fade.Alpha = 0.0f;
             fade.ActivateValue = 1.0f;
+            this.inputManager = inputManager;
         }
 
-        public void AddScreen (GameScreen screen, float alpha)
+        public void AddScreen (GameScreen screen, InputManager inputManager, float alpha)
         {
             transition = true;
             newScreen = screen;
@@ -76,6 +79,7 @@ namespace CHAOSTRIGGER2
             else
                 fade.Alpha = alpha;
             fade.Increase = true;
+            this.inputManager = inputManager;
         }
 
 
@@ -84,13 +88,13 @@ namespace CHAOSTRIGGER2
         {
             currentScreen = new SplashScreen();
             fade = new FadeAnimation();
-
+            inputManager = new InputManager();
 
         }
         public void LoadContent(ContentManager Content)
         {
             content = new ContentManager(Content.ServiceProvider, "Content");
-            currentScreen.LoadContent(Content);
+            currentScreen.LoadContent(Content, inputManager);
             fadeTexture = content.Load<Texture2D>("fade");
             fade.LoadContent(content, fadeTexture, "", Vector2.Zero);
             fade.Scale = dimensions.X;
@@ -126,7 +130,7 @@ namespace CHAOSTRIGGER2
                 screenStack.Push(newScreen);
                 currentScreen.UnloadContent();
                 currentScreen = newScreen;
-                currentScreen.LoadContent(content);
+                currentScreen.LoadContent(content, this.inputManager);
             }
             else if (fade.Alpha == 0.0f)
             {

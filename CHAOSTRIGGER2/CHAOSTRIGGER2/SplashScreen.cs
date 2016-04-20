@@ -22,9 +22,9 @@ namespace CHAOSTRIGGER2
         FileManager fileManager;
         int imageNumber;
 
-        public override void LoadContent(ContentManager Content)
+        public override void LoadContent(ContentManager Content, InputManager inputManager)
         {
-            base.LoadContent(Content);
+            base.LoadContent(Content, inputManager);
             if (font == null)
             {
                 font = Content.Load<SpriteFont>("SpriteFont1");
@@ -69,7 +69,7 @@ namespace CHAOSTRIGGER2
             inputManager.Update();
             if (keyState.IsKeyDown(Keys.Enter))
             {
-                ScreenManager.Instance.AddScreen(new TitleScreen(spriteBatch));
+                ScreenManager.Instance.AddScreen(new TitleScreen(spriteBatch), inputManager);
             }
             for (int i = 0; i < fade.Count; i++)
             {
@@ -83,7 +83,7 @@ namespace CHAOSTRIGGER2
                     if (fade[imageNumber].Alpha == 0.0f)
                         ScreenManager.Instance.AddScreen(new TitleScreen(spriteBatch), fade[imageNumber].Alpha);
                     else
-                        ScreenManager.Instance.AddScreen(new TitleScreen(spriteBatch));
+                        ScreenManager.Instance.AddScreen(new TitleScreen(spriteBatch), inputManager);
                 }
             }
         }

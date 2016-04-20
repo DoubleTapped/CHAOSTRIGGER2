@@ -19,9 +19,9 @@ namespace CHAOSTRIGGER2
         {
             spriteBatch = spriteBatchLoad;
         }
-        public override void LoadContent(ContentManager Content)
+        public override void LoadContent(ContentManager Content, InputManager inputManager)
         {
-            base.LoadContent(Content);
+            base.LoadContent(Content, inputManager);
             if (font == null)
             {
                 font = content.Load<SpriteFont>("SpriteFont1");
@@ -36,7 +36,7 @@ namespace CHAOSTRIGGER2
             keyState = Keyboard.GetState();
             if (keyState.IsKeyDown(Keys.Enter))
             {
-                ScreenManager.Instance.AddScreen(new SplashScreen());
+                ScreenManager.Instance.AddScreen(new SplashScreen(), inputManager);
             }
             ScreenManager.Instance.Update(gameTime);
         }
