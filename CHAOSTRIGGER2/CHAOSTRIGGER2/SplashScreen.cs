@@ -66,7 +66,7 @@ namespace CHAOSTRIGGER2
         }
         public override void Update(GameTime gameTime)
         {
-            keyState = Keyboard.GetState();
+            inputManager.Update();
             if (keyState.IsKeyDown(Keys.Enter))
             {
                 ScreenManager.Instance.AddScreen(new TitleScreen(spriteBatch));
@@ -78,12 +78,12 @@ namespace CHAOSTRIGGER2
 
                 if (fade[imageNumber].Alpha == 0.0f)
                     imageNumber++;
-                if(imageNumber >= fade.Count -1 || keyState.IsKeyDown(Keys.Z))
+                if(imageNumber >= fade.Count -1 || inputManager.KeyPressed(Keys.Z))
                 {
                     if (fade[imageNumber].Alpha == 0.0f)
-                        ScreenManager.Instance.AddScreen(new TitleScreen(), fade[imageNumber].Alpha);
+                        ScreenManager.Instance.AddScreen(new TitleScreen(spriteBatch), fade[imageNumber].Alpha);
                     else
-                        ScreenManager.Instance.AddScreen(new TitleScreen());
+                        ScreenManager.Instance.AddScreen(new TitleScreen(spriteBatch));
                 }
             }
         }
