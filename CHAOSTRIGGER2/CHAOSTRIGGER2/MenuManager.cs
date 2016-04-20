@@ -16,12 +16,65 @@ namespace CHAOSTRIGGER2
         List<Texture2D> menuImages;
         List<List<Animation>> animation;
         List<List<string>> attributes, contents;
+        List<Animation> tempAnimation;
         Rectangle source;
         FileManager fileManager;
         ContentManager content;
         Vector2 position;
+        SpriteFont font;
         int axis;
+        int itemNumber;
 
+        private void SetMenuItems()
+        {
+            for (int i = 0; i < menuItems.Count; i++)
+            {
+                if (menuImages.Count == i)
+                {
+                    menuImages.Add(null);
+                }
+            }
+            for (int i = 0; i < menuImages.Count; i++)
+            {
+                if (menuItems.Count == i)
+                {
+                    menuItems.Add("");
+                }
+            }
+        }
+        private void SetAnimations()
+        {
+            Vector2 pos = position;
+            Vector2 dimensions;
+            for (int i = 0; 9 < menuImages.Count; i++)
+            {
+                if(axis == 1)
+                {
+
+                }
+                for (int j = 0; j < animationTypes.Count; j++)
+                {
+                    switch (animationTypes[j])
+                    {
+                        case "Fade":
+                            tempAnimation.Add(new FadeAnimation());
+                            tempAnimation[tempAnimation.Count - 1].LoadContent(content, menuImages[i], menuItems[i], position);
+                            break;
+                    }
+                }
+                animation.Add(tempAnimation);
+                tempAnimation = new List<Animation>();
+                dimensions = new Vector2(font.MeasureString(menuItems[i]).X + menuImages[i].Width, font.MeasureString(menuItems[i]).Y + menuImages[i].Height);
+                if(axis == 1)
+                {
+                    pos.X += dimensions.X;
+                }
+                else
+                {
+                    pos.Y += dimensions.Y;
+                }
+            }
+        }
         public void LoadContent(ContentManager content, string id)
         {
             this.content = new ContentManager(content.ServiceProvider, "Content");
@@ -31,6 +84,7 @@ namespace CHAOSTRIGGER2
             animation = new List<List<Animation>>();
             attributes = new List<List<string>>();
             contents = new List<List<string>>();
+            itemNumber = 0;
             position = Vector2.Zero;
             fileManager.LoadContent("Load/Menus.ct", attributes, contents, id);
 
@@ -40,6 +94,9 @@ namespace CHAOSTRIGGER2
                 {
                     switch (attributes[i][j])
                     {
+                        case "Font":
+                            font = content.Load<SpriteFont>(contents[i][j]);
+                            break;
                         case "Item":
                             menuItems.Add(contents[i][j]);
                             break;
@@ -70,6 +127,14 @@ namespace CHAOSTRIGGER2
             menuItems.Clear();
             menuImages.Clear();
             animationTypes.Clear();
+        }
+        public void Update(GameTime gameTime)
+        {
+
+        }
+        public void Draw(SpriteBatch spriteBatch)
+        {
+
         }
     }
 }
