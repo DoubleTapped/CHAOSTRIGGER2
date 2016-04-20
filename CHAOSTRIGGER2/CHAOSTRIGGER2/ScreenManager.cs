@@ -95,7 +95,7 @@ namespace CHAOSTRIGGER2
         {
             content = new ContentManager(Content.ServiceProvider, "Content");
             currentScreen.LoadContent(Content, inputManager);
-            fadeTexture = content.Load<Texture2D>("fade");
+            fadeTexture = content.Load<Texture2D>("FadeTest");
             fade.LoadContent(content, fadeTexture, "", Vector2.Zero);
             fade.Scale = dimensions.X;
         }
