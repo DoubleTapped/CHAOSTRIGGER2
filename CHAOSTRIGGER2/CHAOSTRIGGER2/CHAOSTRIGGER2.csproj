@@ -120,6 +120,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Load\Menus.ct" />
     <None Include="Load\Splash.ct">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
