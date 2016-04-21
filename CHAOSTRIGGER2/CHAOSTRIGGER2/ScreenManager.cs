@@ -32,6 +32,8 @@ namespace CHAOSTRIGGER2
 
         Texture2D fadeTexture;
 
+        public Texture2D TitleImage;
+
         InputManager inputManager;
         #endregion
 
@@ -51,6 +53,11 @@ namespace CHAOSTRIGGER2
         {
             get { return dimensions; }
             set { dimensions = value; }
+        }
+
+        public Texture2D titleImage
+        {
+            get {return titleImage;}
         }
         #endregion
 
@@ -95,6 +102,7 @@ namespace CHAOSTRIGGER2
         {
             content = new ContentManager(Content.ServiceProvider, "Content");
             currentScreen.LoadContent(Content, inputManager);
+            titleImage = content.Load<Texture2D>("title");
             fadeTexture = content.Load<Texture2D>("FadeTest");
             fade.LoadContent(content, fadeTexture, "", Vector2.Zero);
             fade.Scale = dimensions.X;
