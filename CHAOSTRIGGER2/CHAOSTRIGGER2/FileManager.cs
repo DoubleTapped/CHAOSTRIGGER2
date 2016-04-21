@@ -64,8 +64,8 @@ namespace CHAOSTRIGGER2
 
         public void LoadContent(string filename, List<List<string>> attributes, List<List<string>> contents, string identifier)
         {
-            using (StreamReader reader = new StreamReader(filename))
             {
+            using (StreamReader reader = new StreamReader(filename))
                 while (!reader.EndOfStream)
                 {
                     string line = reader.ReadLine();

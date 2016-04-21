@@ -54,7 +54,7 @@ namespace CHAOSTRIGGER2
             for (int i = 0; i < fade.Count; i++)
             {
                 fade[i].LoadContent(Content, images[i], "", Vector2.Zero);
-                //ImageWidth /2 * scale - (imageWidth / 2)
+                //ImageWidth / 2 * scale - (imageWidth / 2);
                 fade[i].Scale = 1.08f;
                 fade[i].IsActive = true;
             }
@@ -90,7 +90,6 @@ namespace CHAOSTRIGGER2
         public override void Draw(SpriteBatch spriteBatch)
         {
             fade[imageNumber].Draw(spriteBatch);
-            //sdfg
         }
     }
 }
