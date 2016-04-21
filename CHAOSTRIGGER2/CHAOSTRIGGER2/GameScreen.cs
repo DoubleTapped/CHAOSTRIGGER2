@@ -40,7 +40,7 @@ namespace CHAOSTRIGGER2
         {
 
         }
-        public virtual void Draw()
+        public virtual void Draw(SpriteBatch spriteBatch)
         {
 
         }

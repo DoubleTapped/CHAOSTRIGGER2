@@ -46,7 +46,7 @@ namespace CHAOSTRIGGER2
             }
             ScreenManager.Instance.Update(gameTime);
         }
-        public override void Draw()
+        public override void Draw(SpriteBatch spriteBatch)
         {
             menu.Draw(spriteBatch); 
         }
