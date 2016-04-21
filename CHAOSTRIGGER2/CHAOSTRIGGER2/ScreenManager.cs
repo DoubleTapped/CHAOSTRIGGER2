@@ -113,7 +113,7 @@ namespace CHAOSTRIGGER2
         }
         public void Draw(SpriteBatch spriteBatch)
         {
-            currentScreen.Draw();
+            currentScreen.Draw(spriteBatch);
             if (transition)
             {
                 fade.Draw(spriteBatch);
