@@ -15,6 +15,7 @@ namespace CHAOSTRIGGER2
     {
         KeyboardState keyState;
         SpriteFont font;
+        MenuManager menu;
         public TitleScreen(SpriteBatch spriteBatchLoad)
         {
             spriteBatch = spriteBatchLoad;
@@ -26,13 +27,18 @@ namespace CHAOSTRIGGER2
             {
                 font = content.Load<SpriteFont>("SpriteFont1");
             }
+            menu = new MenuManager();
+            menu.LoadContent(content, "Title");
         }
         public override void UnloadContent()
         {
             base.UnloadContent();
+            menu.UnloadContent();
         }
         public override void Update(GameTime gameTime)
         {
+            //inputManager.Update();
+            menu.Update(gameTime);
             keyState = Keyboard.GetState();
             if (keyState.IsKeyDown(Keys.Enter))
             {
@@ -42,7 +48,7 @@ namespace CHAOSTRIGGER2
         }
         public override void Draw()
         {
-            spriteBatch.DrawString(font, "TitleScreen", new Vector2(100, 100), Color.CornflowerBlue);
+            menu.Draw(spriteBatch); 
         }
     }
 }

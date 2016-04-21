@@ -77,11 +77,13 @@
     <Compile Include="FileManager.cs" />
     <Compile Include="GameScreen.cs" />
     <Compile Include="InputManager.cs" />
+    <Compile Include="MenuManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="ScreenManager.cs" />
     <Compile Include="SplashScreen.cs" />
+    <Compile Include="SpriteSheetAnimation.cs" />
     <Compile Include="TitleScreen.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -89,6 +91,10 @@
     <Content Include="GameThumbnail.png">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>
     </Content>
+    <Content Include="Sprites\PlayerIdle.png" />
+    <Content Include="Sprites\PlayerJump.png" />
+    <Content Include="Sprites\PlayerRun.png" />
+    <Content Include="Sprites\PlayerShoot.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CHAOSTRIGGER2Content\CHAOSTRIGGER2Content.contentproj">
@@ -119,6 +125,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Load\Menus.ct" />
     <None Include="Load\Splash.ct">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
