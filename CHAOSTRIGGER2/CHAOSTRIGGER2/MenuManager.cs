@@ -6,6 +6,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 
 namespace CHAOSTRIGGER2
 {
@@ -138,8 +139,38 @@ namespace CHAOSTRIGGER2
             menuImages.Clear();
             animationTypes.Clear();
         }
-        public void Update(GameTime gameTime)
+        public void Update(GameTime gameTime, InputManager inputManager)
         {
+            if (axis == 1)
+            {
+                if (inputManager.KeyPressed(Keys.Right, Keys.D))
+                {
+                    itemNumber++;
+                }
+                else if(inputManager.KeyPressed(Keys.Left, Keys.A))
+                {
+                    itemNumber--;
+                }
+            }
+            else
+            {
+                if (inputManager.KeyPressed(Keys.Down, Keys.S))
+                {
+                    itemNumber++;
+                }
+                else if (inputManager.KeyPressed(Keys.Up, Keys.W))
+                {
+                    itemNumber--;
+                }
+            }
+            if (itemNumber < 0)
+            {
+                itemNumber = 0;
+            }
+            else if (itemNumber > menuItems.Count - 1)
+            {
+                itemNumber = menuItems.Count - 1;
+            }
             for (int i = 0; i < animation.Count; i++)
             {
                 for (int j = 0; j < animation[i].Count; j++)

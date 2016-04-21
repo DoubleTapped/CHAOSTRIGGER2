@@ -108,6 +108,7 @@ namespace CHAOSTRIGGER2
             else
             {
                 alpha = defaultAlpha;
+                stopUpdating = false;
             }
         }
     }
