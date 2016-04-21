@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CHAOSTRIGGER2", "CHAOSTRIGGER2\CHAOSTRIGGER2\CHAOSTRIGGER2.csproj", "{84F22605-25B6-41AA-BD8A-4FA61F6F2311}"
 EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "CHAOSTRIGGER2Content", "CHAOSTRIGGER2\CHAOSTRIGGER2Content\CHAOSTRIGGER2Content.contentproj", "{7D23A846-A3BC-412D-816E-370A07225FB0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CHAOSTRIGGER2Content", "CHAOSTRIGGER2\CHAOSTRIGGER2Content\CHAOSTRIGGER2Content.contentproj", "{7D23A846-A3BC-412D-816E-370A07225FB0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
