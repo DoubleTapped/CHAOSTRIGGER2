@@ -41,6 +41,12 @@ namespace CHAOSTRIGGER2
             set { scale = value; }
         }
 
+        public SpriteFont Font
+        {
+            get { return font; }
+            set { font = value;}
+        }
+
         public virtual void LoadContent(ContentManager Content, Texture2D image, string text, Vector2 position)
         {
             content = new ContentManager(Content.ServiceProvider, "Content");
