@@ -13,7 +13,7 @@ namespace CHAOSTRIGGER2
     class MenuManager
     {
         List<string> menuItems;
-        List<string> animationTypes;
+        List<string> animationTypes, linkType, linkID;
         List<Texture2D> menuImages;
         List<List<Animation>> animation;
         List<List<string>> attributes, contents;
@@ -121,6 +121,8 @@ namespace CHAOSTRIGGER2
             animation = new List<List<Animation>>();
             attributes = new List<List<string>>();
             contents = new List<List<string>>();
+            linkType = new List<string>();
+            linkID = new List<string>();
             itemNumber = 0;
             position = Vector2.Zero;
             fileManager = new FileManager();
@@ -157,6 +159,12 @@ namespace CHAOSTRIGGER2
                             break;
                         case "Align":
                             align = contents[i][j];
+                            break;
+                        case "LinkType":
+                            linkType.Add(contents[i][j]);
+                            break;
+                        case "LinkID":
+                            linkID.Add(contents[i][j]);
                             break;
                     }
                 }
@@ -196,6 +204,14 @@ namespace CHAOSTRIGGER2
                 else if (inputManager.KeyPressed(Keys.Up, Keys.W))
                 {
                     itemNumber--;
+                }
+            }
+            if(inputManager.KeyPressed(Keys.Enter, Keys.Z))
+            {
+                if(linkType[itemNumber] == "Screen")
+                {
+                    Type newClass = Type.GetType("CHAOSTRIGGER2." + linkID[itemNumber]);
+                    ScreenManager.Instance.AddScreen((GameScreen)Activator.CreateInstance(newClass), inputManager);
                 }
             }
             if (itemNumber < 0)
