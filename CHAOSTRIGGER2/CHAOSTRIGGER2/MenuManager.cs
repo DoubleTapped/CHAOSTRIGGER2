@@ -25,6 +25,7 @@ namespace CHAOSTRIGGER2
         SpriteFont font;
         int axis;
         int itemNumber;
+        string align;
 
         private void SetMenuItems()
         {
@@ -32,7 +33,7 @@ namespace CHAOSTRIGGER2
             {
                 if (menuImages.Count == i)
                 {
-                    menuImages.Add(null);
+                    menuImages.Add(ScreenManager.Instance.TitleImage);
                 }
             }
             for (int i = 0; i < menuImages.Count; i++)
@@ -45,23 +46,54 @@ namespace CHAOSTRIGGER2
         }
         private void SetAnimations()
         {
-            Vector2 pos = position;
-            tempAnimation = new List<Animation>();
             Vector2 dimensions = Vector2.Zero;
+            Vector2 pos = Vector2.Zero;
+
+            if(align.Contains("Center"))
+            {
+                for (int i = 0; i < menuItems.Count; i++)
+                {
+                    dimensions.X += font.MeasureString(menuItems[i]).X + menuImages[i].Width;
+                    dimensions.Y += font.MeasureString(menuItems[i]).Y + menuImages[i].Height;
+                }
+
+                if (axis == 1)
+                {
+                    pos.X = (ScreenManager.Instance.Dimensions.X - dimensions.X) / 2;
+                }
+
+                else if (axis == 2)
+                {
+                    pos.Y = (ScreenManager.Instance.Dimensions.Y - dimensions.Y) / 2;
+                }
+            }
+            else
+            {
+                pos = position;
+            }
+            tempAnimation = new List<Animation>();
+
             for (int i = 0; 9 < menuImages.Count; i++)
             {
                 if(axis == 1)
                 {
+                    dimensions = new Vector2(font.MeasureString(menuItems[i]).X + menuImages[i].Width, font.MeasureString(menuItems[i]).Y + menuImages[i].Height);
 
-                }
-                for (int j = 0; j < animationTypes.Count; j++)
-                {
-                    switch (animationTypes[j])
-                    {
-                        case "Fade":
-                            tempAnimation.Add(new FadeAnimation());
-                            tempAnimation[tempAnimation.Count - 1].LoadContent(content, menuImages[i], menuItems[i], pos);
-                            break;
+                    if (axis == 1)
+                        pos.Y = (ScreenManager.Instance.Dimensions.Y - dimensions.Y) / 2;
+                    else
+                        pos.X = (ScreenManager.Instance.Dimensions.X - dimensions.X) / 2;
+
+                        for (int j = 0; j < animationTypes.Count; j++)
+                        {
+                            switch (animationTypes[j])
+                            {
+                                case "Fade":
+                                    tempAnimation.Add(new FadeAnimation());
+                                    tempAnimation[tempAnimation.Count - 1].LoadContent(content, menuImages[i], menuItems[i], pos);
+                                    tempAnimation[tempAnimation.Count - 1].Font = font;
+                                    break;
+                        }
                     }
                 }
                 if (tempAnimation.Count > 0)
@@ -69,7 +101,7 @@ namespace CHAOSTRIGGER2
                     animation.Add(tempAnimation);
                 }
                 tempAnimation = new List<Animation>();
-                dimensions = new Vector2(font.MeasureString(menuItems[i]).X + menuImages[i].Width, font.MeasureString(menuItems[i]).Y);
+
                 if(axis == 1)
                 {
                     pos.X += dimensions.X;
@@ -122,6 +154,9 @@ namespace CHAOSTRIGGER2
                             break;
                         case "Animation":
                             animationTypes.Add(contents[i][j]);
+                            break;
+                        case "Align":
+                            align = contents[i][j];
                             break;
                     }
                 }
