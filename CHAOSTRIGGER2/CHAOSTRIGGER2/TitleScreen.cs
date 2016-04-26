@@ -44,7 +44,6 @@ namespace CHAOSTRIGGER2
             {
                 ScreenManager.Instance.AddScreen(new SplashScreen(), inputManager);
             }
-            ScreenManager.Instance.Update(gameTime);
         }
         public override void Draw(SpriteBatch spriteBatch)
         {

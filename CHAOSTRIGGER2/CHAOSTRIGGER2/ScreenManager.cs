@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Audio;
 
 namespace CHAOSTRIGGER2
 {
-    public class ScreenManager 
+    public class ScreenManager
     {
         #region Variables
         ContentManager content;
