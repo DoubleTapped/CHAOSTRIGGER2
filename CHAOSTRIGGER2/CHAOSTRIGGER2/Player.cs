@@ -15,8 +15,26 @@ namespace CHAOSTRIGGER2
         {
             base.LoadContent(content, input);
             fileManager = new FileManager();
+            moveAnimation = new SpriteSheetAnimation();
+            Vector2 tempFrames = Vector2.Zero;
 
-            FileManager.LoadContent("Load/Player.ct")
+            fileManager.LoadContent("Load/Player.ct")
+            for(int i = 0; i < attributes.Count; i++)
+            {
+                for(int j = 0; j < attributes[i].Count; j++)
+                {
+                    switch(attributes[i][j])
+                    {
+                        case "Health":
+                            health = int.Parse(contents[i][j]);
+                            break;
+                        case "Frames":
+                            string[] frames = contents[i][j].Split(' ');
+                            tempFrames = new Vector2(int.Parse(frames[0]), int.Parse(frames[1]));
+                            break;
+                    }
+                }
+            }
         }
         public override void UnloadContent()
         {
@@ -25,6 +43,10 @@ namespace CHAOSTRIGGER2
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
+        }
+        public override void Draw(SpriteBatch spriteBatch)
+        {
+
         }
     }
 }
