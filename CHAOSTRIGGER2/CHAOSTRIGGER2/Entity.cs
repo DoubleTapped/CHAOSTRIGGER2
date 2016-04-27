@@ -24,5 +24,19 @@ namespace CHAOSTRIGGER2
         {
             this.content = new ContentManager(content.ServiceProvider, "Content");
         }
+        public virtual void UnloadContent()
+        {
+            content.Unload();
+        }
+
+        public virtual void Update(GameTime gameTime)
+        {
+
+        }
+
+        public virtual void Draw(SpriteBatch spriteBatch)
+        {
+
+        }
     }
 }
