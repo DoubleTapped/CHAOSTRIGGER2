@@ -23,7 +23,7 @@ namespace CHAOSTRIGGER2
         protected ContentManager content;
         protected bool isActive;
         protected float alpha;
-        //test ch
+
         public virtual float Alpha
         {
             get { return alpha; }
