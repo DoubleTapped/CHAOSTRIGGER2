@@ -23,7 +23,7 @@ namespace CHAOSTRIGGER2
         protected ContentManager content;
         protected bool isActive;
         protected float alpha;
-        //test ch
+
         public virtual float Alpha
         {
             get { return alpha; }
@@ -39,6 +39,12 @@ namespace CHAOSTRIGGER2
         public float Scale
         {
             set { scale = value; }
+        }
+
+        public SpriteFont Font
+        {
+            get { return font; }
+            set { font = value;}
         }
 
         public virtual void LoadContent(ContentManager Content, Texture2D image, string text, Vector2 position)

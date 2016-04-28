@@ -54,7 +54,7 @@ namespace CHAOSTRIGGER2
             for (int i = 0; i < fade.Count; i++)
             {
                 fade[i].LoadContent(Content, images[i], "", Vector2.Zero);
-                //ImageWidth /2 * scale - (imageWidth / 2)
+                //imageWidth / 2 * scale - (imageWidth / 2);
                 fade[i].Scale = 1.08f;
                 fade[i].IsActive = true;
             }
@@ -81,16 +81,19 @@ namespace CHAOSTRIGGER2
                 if(imageNumber >= fade.Count -1 || inputManager.KeyPressed(Keys.Z))
                 {
                     if (fade[imageNumber].Alpha == 0.0f)
-                        ScreenManager.Instance.AddScreen(new TitleScreen(spriteBatch),inputManager, fade[imageNumber].Alpha);
+                    {
+                        ScreenManager.Instance.AddScreen(new TitleScreen(spriteBatch), inputManager, fade[imageNumber].Alpha);
+                    }
                     else
+                    {
                         ScreenManager.Instance.AddScreen(new TitleScreen(spriteBatch), inputManager);
+                    }
                 }
             }
         }
-        public override void Draw()
+        public override void Draw(SpriteBatch spriteBatch)
         {
             fade[imageNumber].Draw(spriteBatch);
-            //sdfg
         }
     }
 }

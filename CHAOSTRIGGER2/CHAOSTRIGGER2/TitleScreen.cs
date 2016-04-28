@@ -37,8 +37,8 @@ namespace CHAOSTRIGGER2
         }
         public override void Update(GameTime gameTime)
         {
-            //inputManager.Update();
-            menu.Update(gameTime);
+            inputManager.Update();
+            menu.Update(gameTime, inputManager);
             keyState = Keyboard.GetState();
             if (keyState.IsKeyDown(Keys.Enter))
             {
@@ -46,7 +46,7 @@ namespace CHAOSTRIGGER2
             }
             ScreenManager.Instance.Update(gameTime);
         }
-        public override void Draw()
+        public override void Draw(SpriteBatch spriteBatch)
         {
             menu.Draw(spriteBatch); 
         }

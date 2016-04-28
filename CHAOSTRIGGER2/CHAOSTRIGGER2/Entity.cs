@@ -18,21 +18,22 @@ namespace CHAOSTRIGGER2
         protected ContentManager content;
         protected FileManager fileManager;
 
-         public virtual void LoadContent (ContentManager content, InputManager input)
+        protected List<List<string>> attributes, contents;
+
+        public virtual void LaodContent(ContentManager content, InputManager input)
         {
             this.content = new ContentManager(content.ServiceProvider, "Content");
-
         }
-
-        public virtual void UnloadContent ()
+        public virtual void UnloadContent()
         {
             content.Unload();
-
         }
+
         public virtual void Update(GameTime gameTime)
         {
 
         }
+
         public virtual void Draw(SpriteBatch spriteBatch)
         {
 
