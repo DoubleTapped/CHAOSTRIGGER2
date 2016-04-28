@@ -12,6 +12,11 @@ namespace CHAOSTRIGGER2
 {
     public class Player : Entity
     {
+        InputManager unput
+
+
+
+
         public override void LoadContent(ContentManager content, InputManager input)
         {
             base.LoadContent(content, input);
