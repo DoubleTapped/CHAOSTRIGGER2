@@ -4,9 +4,10 @@ Load=[Axis][Position][Font][Animation]
 [2][Center][MenuFont][Fade]
 
 Load=[Item][LinkType][LinkID]
-[New Game][Screen][GameplayScreen]
-[Load Game][Screen][SplashScreen]
-[Options][Screen][SplashScreen]
-[Credits][Screen][SplashScreen]
+
+[NEW_GAME()][Screen][GameplayScreen]
+[LOAD_GAME()][Screen][SplashScreen]
+[OPTIONS()][Screen][SplashScreen]
+[CREDITS()][Screen][SplashScreen]
 
 EndLoad=[Title]

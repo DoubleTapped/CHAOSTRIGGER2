@@ -32,7 +32,7 @@ namespace CHAOSTRIGGER2
                         case "Frames":
                             string[] frames = contents[i][j].Split(' ');
                             tempFrames = new Vector2(int.Parse(frames[0]), int.Parse(frames[1]));
-                            break;
+                            break; //5:04 #24
                     }
                 }
             }
