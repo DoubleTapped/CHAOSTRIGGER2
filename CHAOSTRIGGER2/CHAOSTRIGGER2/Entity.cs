@@ -18,7 +18,11 @@ namespace CHAOSTRIGGER2
         protected ContentManager content;
         protected FileManager fileManager;
 
+        protected Texture2D image;
+
         protected List<List<string>> attributes, contents;
+
+        protected Vector2 position;
 
         public virtual void LaodContent(ContentManager content, InputManager input)
         {
