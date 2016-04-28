@@ -95,10 +95,10 @@
     <Content Include="GameThumbnail.png">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>
     </Content>
-    <Content Include="Sprites\PlayerIdle.png" />
-    <Content Include="Sprites\PlayerJump.png" />
-    <Content Include="Sprites\PlayerRun.png" />
-    <Content Include="Sprites\PlayerShoot.png" />
+    <Content Include="PlayerSprites\PlayerIdle.png" />
+    <Content Include="PlayerSprites\PlayerJump.png" />
+    <Content Include="PlayerSprites\PlayerRun.png" />
+    <Content Include="PlayerSprites\PlayerShoot.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CHAOSTRIGGER2Content\CHAOSTRIGGER2Content.contentproj">
