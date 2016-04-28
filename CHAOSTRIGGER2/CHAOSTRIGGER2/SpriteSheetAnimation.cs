@@ -44,6 +44,7 @@ namespace CHAOSTRIGGER2
             switchFrame = 100;
             frames = new Vector2(11, 2);
             currentFrame = new Vector2(6, 2);
+            sourceRect = new Rectangle((int)currentFrame.X * FrameHeight, (int)currentFrame.Y * FrameHeight, FrameWidth, FrameHeight);
         }
 
         public override void UnloadContent()
@@ -64,16 +65,13 @@ namespace CHAOSTRIGGER2
                     {
                         currentFrame.X = 0;
                     }
-                    sourceRect = new Rectangle((int)currentFrame.X * FrameWidth, (int)currentFrame.Y * FrameHeight, FrameWidth, FrameHeight);
-
                 }
             }
             else
             {
                 frameCounter = 0;
             }
+            sourceRect = new Rectangle((int)currentFrame.X * FrameWidth, (int)currentFrame.Y * FrameHeight, FrameWidth, FrameHeight);
         }
-
-
     }
 }

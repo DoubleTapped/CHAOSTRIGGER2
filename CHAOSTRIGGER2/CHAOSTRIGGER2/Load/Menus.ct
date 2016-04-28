@@ -1,10 +1,11 @@
-﻿Load=[Title]
+﻿
 
-Load=[Axis][Align][Font][Animation]
+Load=[Axis][Position][Font][Animation]
 [2][Center][MenuFont][Fade]
 
 Load=[Item][LinkType][LinkID]
-[NEW_GAME()][Screen][SplashScreen]
+
+[NEW_GAME()][Screen][GameplayScreen]
 [LOAD_GAME()][Screen][SplashScreen]
 [OPTIONS()][Screen][SplashScreen]
 [CREDITS()][Screen][SplashScreen]

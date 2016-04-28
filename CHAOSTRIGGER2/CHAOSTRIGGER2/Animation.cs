@@ -94,6 +94,6 @@ namespace CHAOSTRIGGER2
                 origin = new Vector2(font.MeasureString(text).X / 2, font.MeasureString(text).Y / 2);
                 spriteBatch.DrawString(font, text, position + origin, color * alpha, rotation, origin, scale, SpriteEffects.None, 0.0f);
             }
-        }
+       }
     }
 }
