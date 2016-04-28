@@ -18,7 +18,7 @@ namespace CHAOSTRIGGER2
         {
             this.content = new ContentManager(content.ServiceProvider, "Content");
             player = new Player();
-            player.LoadContent(content, input);
+            player.LoadContent(content, input);//
         }
 
         public virtual void UnloadContent()
