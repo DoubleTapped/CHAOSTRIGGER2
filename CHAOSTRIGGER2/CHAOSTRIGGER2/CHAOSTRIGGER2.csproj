@@ -73,9 +73,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Animation.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="FadeAnimation.cs" />
     <Compile Include="FileManager.cs" />
+    <Compile Include="GameplayScreen.cs" />
     <Compile Include="GameScreen.cs" />
     <Compile Include="InputManager.cs" />
     <Compile Include="MenuManager.cs" />
@@ -93,10 +95,10 @@
     <Content Include="GameThumbnail.png">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>
     </Content>
-    <Content Include="Sprites\PlayerIdle.png" />
-    <Content Include="Sprites\PlayerJump.png" />
-    <Content Include="Sprites\PlayerRun.png" />
-    <Content Include="Sprites\PlayerShoot.png" />
+    <Content Include="PlayerSprites\PlayerIdle.png" />
+    <Content Include="PlayerSprites\PlayerJump.png" />
+    <Content Include="PlayerSprites\PlayerRun.png" />
+    <Content Include="PlayerSprites\PlayerShoot.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CHAOSTRIGGER2Content\CHAOSTRIGGER2Content.contentproj">

@@ -65,16 +65,13 @@ namespace CHAOSTRIGGER2
                     {
                         currentFrame.X = 0;
                     }
-                    sourceRect = new Rectangle((int)currentFrame.X * FrameWidth, (int)currentFrame.Y * FrameHeight, FrameWidth, FrameHeight);
-
                 }
             }
             else
             {
                 frameCounter = 0;
             }
+            sourceRect = new Rectangle((int)currentFrame.X * FrameWidth, (int)currentFrame.Y * FrameHeight, FrameWidth, FrameHeight);
         }
-
-
     }
 }
