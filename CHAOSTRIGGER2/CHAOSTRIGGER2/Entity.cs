@@ -24,7 +24,7 @@ namespace CHAOSTRIGGER2
 
         protected Vector2 position;
 
-        public virtual void LaodContent(ContentManager content, InputManager input)
+        public virtual void LoadContent(ContentManager content, InputManager input)
         {
             this.content = new ContentManager(content.ServiceProvider, "Content");
         }

@@ -37,13 +37,13 @@ namespace CHAOSTRIGGER2
                         case "Frames":
                             string[] frames = contents[i][j].Split(' ');
                             tempFrames = new Vector2(int.Parse(frames[0]), int.Parse(frames[1]));
-                            break; //5:04 #24
+                            break;
                         case "Image":
                             image = content.Load<Texture2D>(contents[i][j]);
                             break;
                         case "Position":
-                            string[] position = contents[i][j].Split(' ');
-                            tempFrames = new Vector2(int.Parse(frames[0]), int.Parse(frames[1]));
+                            frames = contents[i][j].Split(' ');
+                            position = new Vector2(int.Parse(frames[0]), int.Parse(frames[1]));
                             break;
                     }
                 }
